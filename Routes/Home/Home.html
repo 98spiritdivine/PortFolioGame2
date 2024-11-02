@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Home.css" />
+
+    <title>HomePage</title>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Brand</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main_nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active"> <a class="nav-link1" href="./Home.html"> Home </a> </li>
+                    <li class="nav-item section--hidden"><a class="nav-link4 section--hidden"  href="#"> Game Rules </a></li>
+                    <li class="nav-item"><a class="nav-link3" href="#"> Contact Us </a></li>
+
+                    <!-- ==========================Routes================================================== -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown"> List Of Games </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="../Guess/Guess.html ">
+                                    1. Guess my Number</a></li>
+                            <!-- <li><a class="dropdown-item"
+                                    href="../Dice/Dice.html  ">
+                                    Dice Game </a></li> -->
+                            <li><a class="dropdown-item" href="../Simon/Simon.html ">2.  Simon Game </a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#"> Menu item </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"> Menu item </a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown"> Dropdown right </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="./Routes/Guess/Guess.html"> Guess-My-Number</a></li>
+                            <li><a class="dropdown-item"
+                                    href="./Routes/Dice/Dice.html">
+                                    Roll Dice </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div> <!-- navbar-collapse.// -->
+        </div> <!-- container-fluid.// -->
+    </nav>
+
+    <!-- Auto-sliding carousel -->
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="GuessNum.png" class="d-block " alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="SimonGame.png" class="d-block " alt="...">
+        </div>
+        <!-- <div class="carousel-item">
+            <img src="Grad.jpg" class="d-block w-100" alt="...">
+        </div> -->
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!--                   Instructions For Games -->
+
+<section class="Instruction" id="nav4">
+<div class="slider">
+    <div class="slidee activee">
+        <h2>Rules for Guessing Game</h2>
+        <p>Guess a number between 1 & 10 and Check to see if It is the right Guess</p>
+    </div>
+    <div class="slidee">
+        <h2>Rules for Simon Game</h2>
+        <p>Repeat the Patterns of the buttons that flash</p>
+    </div>
+    <!-- <div class="slidee">
+        <h2>Join Us on This Journey</h2>
+        <p>We invite you to engage with our project and share your feedback.</p>
+    </div> -->
+    <button id="prev">Previous</button>
+    <button id="next">Next</button>
+    <!-- <button class="slider__btni slider__btn--left">&larr;</button>
+    <button class="slider__btni slider__btn--right">&rarr;</button> -->
+</div>
+
+
+</section>
+
+
+
+
+    <!-- ==========================ABOUT US SECTION================================================================= -->
+
+    <!-- <div class="about-section section" id="about">
+        <img src="./Pictures/Grad.jpg" alt="Profile Picture" class="profile-pic">
+        <div class="about-content">
+            <h2>Blessed C. Adzinyo</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac urna quis sapien facilisis posuere.
+                orem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac urna quis sapien facilisis posuere.
+                orem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac urna quis sapien facilisis posuere.
+            </p>
+        </div>
+        <div class="button-group">
+            <div class="round-button">A</div>
+            <div class="round-button">B</div>
+            <div class="round-button">C</div>
+        </div>
+    </div> -->
+
+    <!-- ==================== Contact Us===================================================================== -->
+    <br>
+    <div class="contact-section section" id="contact">
+        <!-- Left side message -->
+        <div class="contact-message">
+            <h2>Let's Connect</h2>
+            <p>We'd love to hear from you! Fill out the form, and our team will get in touch with you as soon as
+                possible.</p>
+        </div>
+
+
+        <!-- Contact form -->
+        <div class="contact-form section">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Bootstrap JS and dependencies (Popper and Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Home.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,389 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="HomePage.css" /> -->
+    <title>Simon Game</title>
+    <!-- CSS -->
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: rgb(206, 201, 201);
+            font-family: 'Balsamiq Sans', sans-serif;
+        }
+
+        /* Gradient animation */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @media all and (min-width: 992px) {
+            .navbar .nav-item .dropdown-menu {
+                display: none;
+            }
+
+            .navbar .nav-item:hover .nav-link {}
+
+            .navbar .nav-item:hover .dropdown-menu {
+                display: block;
+                color: rgb(189, 95, 95);
+
+            }
+
+            .navbar .nav-item .dropdown-menu {
+                margin-top: 0;
+            }
+
+            /* Styling for the navbar */
+            .navbar {
+                position: fixed;
+                top: 0;
+                background-color: #333;
+                color: white;
+                padding: 10px 0;
+                text-align: center;
+                width: 100%;
+                z-index: 1000;
+                /* Ensures it's on top */
+            }
+
+            /* Links inside the navbar */
+            .navbar a {
+                color: hwb(0 0% 100%);
+                /* background-color: #3025cc; */
+                padding: 14px 20px;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            /* Change color on hover */
+            a:hover {
+                /* background-color: #a1c4fd;
+        color: rgb(82, 173, 196); */
+                color: #a1c4fd;
+
+            }
+
+            /* Some extra content to test the sticky navbar */
+            .content {
+                padding: 15px;
+                height: 1500px;
+                /* Just to demonstrate the scrolling */
+            }
+        }
+
+        /* CSS For Nav Bar */
+
+
+
+        #controls {
+            margin: 20px 0 20px 0;
+        }
+
+        #strict-mode {
+            margin-right: 20px;
+        }
+
+        #simon-board {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 300px;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .simon-btn {
+            width: 100px;
+            height: 100px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #3498db;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        .top-left {
+            background-color: darkgreen;
+        }
+
+        .top-right {
+            background-color: darkred;
+        }
+
+        .bottom-left {
+            background-color: goldenrod;
+        }
+
+        .bottom-right {
+            background-color: darkblue;
+        }
+
+        .level-count {
+            color: red;
+            background-color: rgb(81, 0, 0);
+            padding: 0.25rem 1rem;
+        }
+
+        #start-btn,
+        #power-btn {
+            font-family: 'Balsamiq Sans', sans-serif;
+            margin-top: 30px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #2ecc71;
+            color: #fff;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #start-btn:hover,
+        #power-btn:hover {
+            background-color: #27ae60;
+        }
+
+        #start-btn:disabled,
+        #power-btn:disabled {
+            background-color: #484a4b;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Brand</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main_nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active"> <a class="nav-link1" href="../Home/Home.html"> Home </a> </li>
+                    <li class="nav-item section--hidden"><a class="nav-link section--hidden" href="#"> About </a></li>
+                    <li class="nav-item"><a class="nav-link3" href="#"> Contact Us </a></li>
+    
+                    <!-- ==========================Routes================================================== -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown"> List Of Games </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href=" ../Guess/Guess.html ">
+                                    Guess my Number</a></li>
+                            <li><a class="dropdown-item" href="  ">
+                                    Dice Game </a></li>
+                            <li><a class="dropdown-item" href="../Simon/Simon.html  "> Simon Game </a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#"> Menu item </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"> Menu item </a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown"> Dropdown right </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="./Routes/Guess/Guess.html"> Guess-My-Number</a></li>
+                            <li><a class="dropdown-item" href="./Routes/Dice/Dice.html">
+                                    Roll Dice </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div> <!-- navbar-collapse.// -->
+        </div> <!-- container-fluid.// -->
+    </nav>
+
+
+
+    <h1>Simon Game</h1>
+    <div id="controls">
+        <label for="strict-mode">Strict Mode</label>
+        <input type="checkbox" id="strict-mode" onchange="toggleStrictMode()">
+    </div>
+
+    <div id="simon-board">
+        <button class="simon-btn top-left" onclick="handleClick(this)" data-color="1" disabled></button>
+        <button class="simon-btn top-right" onclick="handleClick(this)" data-color="2" disabled></button>
+        <button class="simon-btn bottom-left" onclick="handleClick(this)" data-color="3" disabled></button>
+        <button class="simon-btn bottom-right" onclick="handleClick(this)" data-color="4" disabled></button>
+    </div>
+
+    <div id="level">
+        <span>Level:
+            <span class="level-count">-</span>
+        </span>
+    </div>
+    <button id="power-btn" onclick="togglePower()">Start</button>
+    <!-- JavaScript -->
+    <script>
+        let strictMode = false;
+        let powerOn = false;
+        const sequence = [];
+        let userSequence = [];
+        let level = 1;
+
+        const levelCount = document.querySelector('.level-count');
+
+        function startGame() {
+            sequence.length = 0;
+            userSequence.length = 0;
+            level = 1;
+            levelCount.textContent = level;
+            nextRound();
+            document.getElementById("start-btn").disabled = true;
+            document.getElementById("power-btn").disabled = false;
+        }
+
+        function nextRound() {
+            addToSequence();
+            playSequence();
+        }
+
+        function addToSequence() {
+            const randomColor = Math.floor(Math.random() * 4) + 1;
+            sequence.push(randomColor);
+        }
+
+        function playSequence() {
+            let i = 0;
+            const intervalId = setInterval(() => {
+                highlightButton(sequence[i]);
+                i++;
+                if (i >= sequence.length) {
+                    clearInterval(intervalId);
+                    enableButtons();
+                }
+            }, 1000);
+        }
+
+        function handleClick(button) {
+            if (powerOn) {
+                const userColor = button.getAttribute("data-color");
+                userSequence.push(Number(userColor));
+                highlightButton(userColor);
+                if (!checkSequence()) {
+                    if (strictMode) {
+                        alert(`Game over! Press Start to retry 
+						from level 1.\nFINAL SCORE: ${level}`);
+                        togglePower();
+                        startGame();
+                    } else {
+                        alert(`Wrong sequence! Press Start to try again
+						from current level.\nFINAL SCORE: ${level}`);
+                        userSequence = [];
+                        document.getElementById('power-btn')
+                            .addEventListener('click', () => {
+                                playSequence();
+                            })
+                    }
+                } else if (userSequence.length === sequence.length) {
+                    userSequence = [];
+                    level++;
+                    levelCount.textContent = level;
+                    /*Can change level as per convenience or if we want the game to 
+                    continue indefinitely, can omit if-else condition */
+                    if (level <= 20) {
+                        setTimeout(() => nextRound(), 1000);
+                    } else {
+                        alert("Congratulations! You won!");
+                        startGame();
+                    }
+                }
+            }
+        }
+
+        function checkSequence() {
+            for (let i = 0; i < userSequence.length; i++) {
+                if (userSequence[i] !== sequence[i]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function highlightButton(color) {
+            const button = document
+                .querySelector(`[data-color="${color}"]`);
+            if (Number(color) == 1) {
+                button.style.backgroundColor = 'lightgreen'
+            }
+            else if (Number(color) == 2) {
+                button.style.backgroundColor = 'tomato'
+            }
+            else if (Number(color) == 3) {
+                button.style.backgroundColor = 'yellow'
+            }
+            else if (Number(color) == 4) {
+                button.style.backgroundColor = 'lightskyblue'
+            }
+            setTimeout(() => {
+                button.attributes.removeNamedItem('style');
+            }, 300);
+        }
+
+        function enableButtons() {
+            const buttons = document
+                .querySelectorAll('.simon-btn');
+            buttons.forEach(button =>
+                button.removeAttribute('disabled'));
+        }
+
+        function disableButtons() {
+            const buttons = document
+                .querySelectorAll('.simon-btn');
+            buttons.forEach(button =>
+                button.setAttribute('disabled', 'true'));
+        }
+
+        function toggleStrictMode() {
+            strictMode = !strictMode;
+        }
+
+        function togglePower() {
+            powerOn = !powerOn;
+            if (powerOn) {
+                startGame();
+                enableButtons();
+                document.getElementById("start-btn")
+                    .disabled = false;
+            } else {
+                userSequence = [];
+                disableButtons();
+                document.getElementById("start-btn")
+                    .disabled = true;
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>
