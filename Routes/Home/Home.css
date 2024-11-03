@@ -330,77 +330,57 @@ body {
     padding: 10px;
 }
 
-/* Medium Devices - Small Screens (Tablets) */
-@media (min-width: 576px) {
-    .container {
-        padding: 20px;
-    }
+ @media all and (min-width: 992px) {
+      .navbar .nav-item .dropdown-menu {
+          display: none;
+      }
 
-    /* Adjust font sizes for readability on small screens */
-    h1 {
-        font-size: 1.8em;
-    }
+      .navbar .nav-item:hover .nav-link {}
 
-    p {
-        font-size: 1em;
-    }
-}
+      .navbar .nav-item:hover .dropdown-menu {
+          display: block;
+          color: rgb(189, 95, 95);
 
-/* Large Devices - Medium Screens (Desktops) */
-@media (min-width: 768px) {
-    .container {
-        padding: 30px;
-    }
+      }
 
-    /* Increase font sizes for larger screens */
-    h1 {
-        font-size: 2em;
-    }
+      .navbar .nav-item .dropdown-menu {
+          margin-top: 0;
+      }
 
-    p {
-        font-size: 1.1em;
-    }
-}
+      /* Styling for the navbar */
+      .navbar {
+          position: fixed;
+          top: 0;
+          background-color: #333;
+          color: white;
+          padding: 10px 0;
+          text-align: center;
+          width: 100%;
+          z-index: 1000;
+          /* Ensures it's on top */
+      }
 
-/* Extra Large Devices - Large Desktops */
-@media (min-width: 992px) {
-    .container {
-        padding: 40px;
-    }
+      /* Links inside the navbar */
+      .navbar a {
+          color: hwb(0 0% 100%);
+          /* background-color: #3025cc; */
+          padding: 14px 20px;
+          text-decoration: none;
+          display: inline-block;
+      }
 
-    /* Further adjust font sizes */
-    h1 {
-        font-size: 2.5em;
-    }
+      /* Change color on hover */
+      a:hover {
+          /* background-color: #a1c4fd;
+        color: rgb(82, 173, 196); */
+          color: #a1c4fd;
 
-    p {
-        font-size: 1.2em;
-    }
+      }
 
-    /* Adjust grid layouts for larger screens */
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-}
-
-/* XXL Devices - Very Large Screens */
-@media (min-width: 1200px) {
-    .container {
-        padding: 50px;
-    }
-
-    h1 {
-        font-size: 3em;
-    }
-
-    p {
-        font-size: 1.3em;
-    }
-
-    /* Adjust grid layout for even larger screens */
-    .grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
+      /* Some extra content to test the sticky navbar */
+      .content {
+          padding: 15px;
+          height: 1500px;
+          /* Just to demonstrate the scrolling */
+      }
+  }
