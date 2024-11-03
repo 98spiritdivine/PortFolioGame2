@@ -316,3 +316,91 @@ button {
     opacity: 0;
     transform: translateY(8rem);
 }
+
+
+/* Base Styles - Mobile First */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Small Devices - Extra Small (Portrait Phones) */
+.container {
+    padding: 10px;
+}
+
+/* Medium Devices - Small Screens (Tablets) */
+@media (min-width: 576px) {
+    .container {
+        padding: 20px;
+    }
+
+    /* Adjust font sizes for readability on small screens */
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}
+
+/* Large Devices - Medium Screens (Desktops) */
+@media (min-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+
+    /* Increase font sizes for larger screens */
+    h1 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+}
+
+/* Extra Large Devices - Large Desktops */
+@media (min-width: 992px) {
+    .container {
+        padding: 40px;
+    }
+
+    /* Further adjust font sizes */
+    h1 {
+        font-size: 2.5em;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    /* Adjust grid layouts for larger screens */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* XXL Devices - Very Large Screens */
+@media (min-width: 1200px) {
+    .container {
+        padding: 50px;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    p {
+        font-size: 1.3em;
+    }
+
+    /* Adjust grid layout for even larger screens */
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
